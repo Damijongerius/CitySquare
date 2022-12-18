@@ -1,19 +1,29 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class WorldConfig
 {
+    #region WorldValues
     private int _seed = 0;
     public int Seed { get => GetSeed(); set => SetSeed(value); }
     public Vector2 SeedOrigin { get => GetSeedOrigin(); }
 
-    public int size;
+    private int _size; 
+    public int Size { get; set; }
 
-    public float noiseScale;
+    //noise
+    private int _octaves;
+    private int _height;
 
-    public float noiseOctaves;
+
+
+    public float waterHeight;
+
+    public float fallOfRange;
+    #endregion
 
     private Vector2 GetSeedOrigin()
     {
